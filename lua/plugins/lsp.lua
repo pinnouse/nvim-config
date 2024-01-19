@@ -4,6 +4,10 @@ return {
     opts = {
       servers = {
         rust_analyzer = {},
+        templ = {},
+        pyright = {},
+        tsserver = {},
+        racket_langserver = {},
       },
     },
   },
