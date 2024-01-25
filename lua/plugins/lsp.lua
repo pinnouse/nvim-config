@@ -1,5 +1,9 @@
 return {
   {
+    "kaarmu/typst.vim",
+    ft = "typst",
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
@@ -8,6 +12,12 @@ return {
         pyright = {},
         tsserver = {},
         racket_langserver = {},
+        typst_lsp = {
+          settings = {
+            exportPdf = "onSave",
+          },
+          filetypes = { "typst", "typ" },
+        },
       },
     },
   },
