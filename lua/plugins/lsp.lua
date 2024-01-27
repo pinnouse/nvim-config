@@ -14,9 +14,8 @@ return {
         racket_langserver = {},
         typst_lsp = {
           settings = {
-            exportPdf = "onSave",
+            exportPdf = "onType",
           },
-          filetypes = { "typst", "typ" },
         },
       },
     },
