@@ -10,6 +10,21 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-cmdline",
+    },
+    ---@param opts cmp.ConfigSchema
+    opts = function(_, opts)
+      table.insert(opts.sources, {
+        name = "path",
+      })
+      table.insert(opts.sources, {
+        name = "cmdline",
+        options = {
+          ignore_cmds = { "Man", "!" },
+        },
+      })
+    end,
   },
   {
     "numToStr/Comment.nvim",

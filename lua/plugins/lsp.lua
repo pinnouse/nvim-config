@@ -2,12 +2,21 @@ return {
   {
     "kaarmu/typst.vim",
     ft = "typst",
+    lazy = false,
+    config = function(_, _)
+      vim.g.typst_conceal = 2
+    end,
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^4",
+    ft = { "rust" },
   },
   {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        rust_analyzer = {},
+        -- rust_analyzer = {},
         templ = {},
         pyright = {},
         tsserver = {},
