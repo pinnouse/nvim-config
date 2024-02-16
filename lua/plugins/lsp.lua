@@ -21,6 +21,7 @@ return {
         pyright = {},
         tsserver = {},
         racket_langserver = {},
+        ruff_lsp = {},
         typst_lsp = {
           settings = {
             exportPdf = "onType",
