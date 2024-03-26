@@ -15,6 +15,7 @@ return {
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
+      local cmp = require("cmp")
       table.insert(opts.sources, {
         name = "path",
       })
@@ -23,6 +24,9 @@ return {
         options = {
           ignore_cmds = { "Man", "!" },
         },
+      })
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        ["<S-CR>"] = cmp.config.disable,
       })
     end,
   },

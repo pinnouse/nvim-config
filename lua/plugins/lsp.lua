@@ -16,6 +16,9 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        clangd = {
+          cmd = { "clangd", "--offset-encoding=utf-16" },
+        },
         -- rust_analyzer = {},
         templ = {},
         pyright = {},
@@ -37,12 +40,9 @@ return {
       opts.root_dir = opts.root_dir
         or require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git")
       opts.sources = vim.list_extend(opts.sources or {}, {
-        nls.builtins.formatting.fish_indent,
-        nls.builtins.diagnostics.fish,
         nls.builtins.formatting.stylua,
         nls.builtins.formatting.shfmt,
         nls.builtins.formatting.stylua,
-        nls.builtins.code_actions.eslint_d,
       })
     end,
   },
